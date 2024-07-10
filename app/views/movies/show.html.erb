@@ -11,7 +11,7 @@
     <h4 class="text-3xl font-bold"><%= @movie['title'] %></h4>
     <p><%= @movie['description'] %></p>
     <p class="font-bold">Runtime: <span class="font-light"><%= @movie['runtime_in_minutes'] %> minutes</span></p>
-    <p class="font-bold">Rating: <span class="font-light"><%= @movie['rating'] %></span></p>
+    <p class="font-bold">Rating: <span class="font-light"><%= @movie['rating'].upcase %></span></p>
     <p class="font-bold">Average Review Rating: <span class="font-light">3</span></p>
     
     <div>

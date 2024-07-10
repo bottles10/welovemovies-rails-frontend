@@ -1,0 +1,8 @@
+<% provide(:title, "All Theaters") %>
+
+<h2>All Theaters</h2>
+<section class="space-y-6">
+  <% @theaters.each do |theater| %>
+    <%= render 'theater', theater: theater %>
+  <% end %>
+</section>

@@ -4,8 +4,8 @@
 <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
   <% @movies_showing.uniq.each do |movie| %>
     <article class="">
-      <%= link_to image_tag(movie['image_url'], alt: movie['title'], class: "rounded-t"), '#' %>
-      <%#= link_to movie['title'], movie_path(movie), class: "text-3xl font-bold text-center" %>
+      <%= link_to image_tag(movie['image_url'], alt: movie['title'], class: "rounded-t"), movie_path(movie['id']) %>
+      <%= link_to movie['title'], movie_path(movie['id']), class: "text-3xl font-bold text-center" %>
     </article>
   <% end %>
 </section>

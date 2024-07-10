@@ -1,0 +1,14 @@
+<article class="flex justify-between">
+    <div>
+        <h3 class="mb-3 text-3xl font-bold"><%= theater['name'] %></h3>
+        <p><%= theater['address'] %></p> 
+        <p><%= theater['city'] %>, <%= theater['state'] %> <%= theater['zip'] %></p>
+    </div>
+
+    <div class="grid grid-cols-6 gap-3 md:gap-6">
+        <% theater['movies'].each do |movie| %>
+            <%= link_to image_tag(movie['image_url'], class: "w-16"), movie_path(movie['id']) %>
+        <% end %>
+    
+    </div>
+</article>
