@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Welovemovies Frontend" %></title>
+    <title><%= content_for(:title) || "Welovemovies Rails" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
@@ -19,8 +19,12 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
+    <%= render "layouts/navigation" %>
+
+    <main class="px-5 xl:px-48">
+      <div class="py-10">
+        <%= yield %>
+      </div>
     </main>
   </body>
 </html>
