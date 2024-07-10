@@ -54,6 +54,12 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  gem "webdrivers", "~> 5.3.0"
+  gem "rails-controller-testing"
+  gem "minitest"
+  gem "minitest-reporters"
+  gem "guard"
+  gem "guard-minitest"
 end
 
 gem "tailwindcss-rails", "~> 2.6"
