@@ -30,112 +30,27 @@
     <div>
       <h4 class="mb-2 text-2xl font-bold">Reviews</h4>
       <div class="container mx-auto space-y-6">
-        <div class="p-6 border rounded">
-          <review-content class="mb-6 block leading-relaxed space-y-3">
-            <p class="text-2xl font-semibold">
-              Abhi Patil <span class="text-base font-light">of Independent (UK)</span>
-            </p>
-            <p>
-              Lorem markdownum priores iactate receptus margine in
-              motu ferreus pastor. Teneat tua opifex regina, adest;
-              similisque nec, me convivia ortus.
-            </p>
-            <p>
-              Est sontes praemia fatorum diversosque innubere rursus.
-              Tanto inter commenta tremulasque tergo donec Apollinei
-              mearum: Hector colorum horruit.
-            </p>
-            <p>
-              Cur repulsa matrem frequentes parvum coniuge ad nisi
-              leto, ira. Orbis levatus o coniugis longis confinia
-              bello rursus quem Atridae indulgere! Sanguine o operi
-              flammas sorores suffundit et ilia. Nais edentem tamen.
-              Acta munera enixa ad terram!
-            </p>
-            <p>
-              Sint sed per oppugnant Medusae Pagasaeae undique rebus
-              cernit terram delituit dilapsa tigres. Ait omne conatur
-              nomen cumque, ad Minoa magna dolentes, ageret. Sum
-              addat, et unum iunge, aberant his indigenae facundia?
-            </p>
-            <p>
-              Perdidit astra, si maternis sibi, Phoebi protinus
-              senecta digitos. Atque suique Lyrnesia, prosunt suae
-              mihi aqua, te!
-            </p>
-            <p>
-            Subsedit tantaque vulnera totiens aptos vivit digna
-              pectoraque mutua. Duro ante tibi perhorruit praedelassat
-              simulat turis loco hunc dederat viscera scilicet
-              transitus quam longius aenea, concussaque hoc mille.
-            </p>
-            <p>Ut erat. Tibi Themin corpore saepes.</p>
-          </review-content>
+        <% @movie['reviews'].each do |review| %> 
+          <div class="p-6 border rounded">
+            <review-content class="mb-6 block leading-relaxed space-y-3">
+              <p class="text-2xl font-semibold">
+                  <%= full_name( review['critic']['preferred_name'], review['critic']['surname'] ) %><span class="font-xl font-light"> of <%= review['critic']['organization_name'].titleize %></span>
+              </p>
+              <p><%= markdown(review['content']) %></p>
+            </review-content>
           
-          <div class="mb-6 flex space-x-2">
-            <p class="font-bold">Rating:</p>
-            <p id="rating-number">4</p>
-            <rating-button class="inline-block -space-x-2">
-              <button class="text-blue-500 font-extrabold transform rotate-90">&larr;</button>
-              <button class="text-blue-500 font-extrabold transform -rotate-90">&larr;</button>
-            </rating-button>
+            <div class="mb-6 flex space-x-2">
+              <p class="font-bold">Rating:</p>
+              <p id="rating-number"><%= review['score'] %></p>
+              <rating-button class="inline-block space-x-2">
+                <button class="text-blue-500 font-extrabold transform rotate-90">&larr;</button>
+                <button class="text-blue-500 font-extrabold transform -rotate-90">&larr;</button>
+              </rating-button>
+            </div>
+
+            <button class="py-2 px-6 bg-red-600 text-red-100 rounded shadow">Destroy Review</button>
           </div>
-
-          <button class="py-2 px-6 bg-red-600 text-red-100 rounded shadow">Destroy Review</button>
-        </div>
-
-        <div class="p-6 border rounded">
-          <review-content class="mb-6 block leading-relaxed space-y-3">
-            <p class="text-2xl font-semibold">
-              Abhi Patil <span class="text-base font-light">of Independent (UK)</span>
-            </p>
-            <p>
-              Lorem markdownum priores iactate receptus margine in
-              motu ferreus pastor. Teneat tua opifex regina, adest;
-              similisque nec, me convivia ortus.
-            </p>
-            <p>
-              Est sontes praemia fatorum diversosque innubere rursus.
-              Tanto inter commenta tremulasque tergo donec Apollinei
-              mearum: Hector colorum horruit.
-            </p>
-            <p>
-              Cur repulsa matrem frequentes parvum coniuge ad nisi
-              leto, ira. Orbis levatus o coniugis longis confinia
-              bello rursus quem Atridae indulgere! Sanguine o operi
-              flammas sorores suffundit et ilia. Nais edentem tamen.
-              Acta munera enixa ad terram!
-            </p>
-            <p>
-              Sint sed per oppugnant Medusae Pagasaeae undique rebus
-              cernit terram delituit dilapsa tigres. Ait omne conatur
-              nomen cumque, ad Minoa magna dolentes, ageret. Sum
-              addat, et unum iunge, aberant his indigenae facundia?
-            </p>
-            <p>
-              Perdidit astra, si maternis sibi, Phoebi protinus
-              senecta digitos. Atque suique Lyrnesia, prosunt suae
-              mihi aqua, te!
-            </p>
-            <p>
-            Subsedit tantaque vulnera totiens aptos vivit digna
-              pectoraque mutua. Duro ante tibi perhorruit praedelassat
-              simulat turis loco hunc dederat viscera scilicet
-              transitus quam longius aenea, concussaque hoc mille.
-            </p>
-            <p>Ut erat. Tibi Themin corpore saepes.</p>
-          </review-content>
-          <div class="mb-6 flex space-x-2">
-            <p class="font-bold">Rating:</p>
-            <p id="rating-number">4</p>
-            <rating-button class="inline-block -space-x-2">
-              <button class="text-blue-500 font-extrabold transform rotate-90">&larr;</button>
-              <button class="text-blue-500 font-extrabold transform -rotate-90">&larr;</button>
-            </rating-button>
-          </div>
-
-          <button class="py-2 px-6 bg-red-600 text-red-100 rounded shadow">Destroy Review</button>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>

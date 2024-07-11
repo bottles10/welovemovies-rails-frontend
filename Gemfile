@@ -65,3 +65,5 @@ end
 gem "tailwindcss-rails", "~> 2.6"
 
 gem "httparty", "~> 0.22.0"
+
+gem "redcarpet", "~> 3.6"
