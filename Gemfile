@@ -62,7 +62,7 @@ group :test do
   gem "guard-minitest"
 end
 
-gem "tailwindcss-rails", "~> 2.6"
+gem "tailwindcss-rails", "~> 2.7"
 
 gem "httparty", "~> 0.22.0"
 
